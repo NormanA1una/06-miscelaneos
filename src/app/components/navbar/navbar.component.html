@@ -1,0 +1,21 @@
+<div>
+  <mat-toolbar class="bg-slate-900">
+    <img src="assets/img/manifestacion.png" alt="Icon" width="50" height="50" />
+
+    <div class="rounded-lg ml-2" routerLinkActive="active">
+      <a
+        class="mx-2 no-underline text-zinc-200 p-2 rounded-lg"
+        [routerLink]="['home']"
+        >Home</a
+      >
+    </div>
+
+    <div class="rounded-lg" routerLinkActive="active">
+      <a
+        class="mx-0.5 no-underline text-zinc-200 p-2 rounded-lg"
+        [routerLink]="['usuario', '10']"
+        >Usuario</a
+      >
+    </div>
+  </mat-toolbar>
+</div>

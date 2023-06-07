@@ -1,0 +1,70 @@
+<div class="mt-4" role="alert">
+  <mat-card>
+    <mat-card-content [ngClass]="alerta">Simple card</mat-card-content>
+  </mat-card>
+</div>
+
+<div class="flex space-x-4 mt-2">
+  <button (click)="alerta = 'alert-info'" mat-raised-button class="alert-info">
+    Info
+  </button>
+  <button (click)="alerta = 'alert-done'" mat-raised-button class="alert-done">
+    Done
+  </button>
+
+  <button
+    (click)="alerta = 'alert-danger'"
+    mat-raised-button
+    class="alert-danger"
+  >
+    Danger
+  </button>
+</div>
+<br /><br />
+
+<h3
+  [ngClass]="{
+    'text-danger': propiedades.danger,
+    'text-info': !propiedades.danger
+  }"
+>
+  Hola mundo!
+</h3>
+
+<button
+  (click)="propiedades.danger = !propiedades.danger"
+  mat-raised-button
+  [ngClass]="{
+    'alert-danger': propiedades.danger,
+    'alert-info': !propiedades.danger
+  }"
+>
+  Cambiar
+</button>
+
+<br /><br />
+
+<h3>Proceso Asíncrono</h3>
+<!-- Ocupamos en este ejemplo 3 cosas, una declaración de variable la cual es "Loading" que se inicializa en false, la siguiente es el evento
+click, el cual va a mandar a llamar la otra cosa que es un método llamado ejecutar() el cual cambia el loading a true cuando se da el click
+tambien en el método antes mecionado se ocupa un setTimeOut de 3s en donde se cambia a false de nuevo el loading simulando un proceso asíncrono
+. Ocupando esos procesos de cambios de false a true y de true de nuevo a false es que se ocupan las demas directivas para ir alternando de clases
+en el caso de ngClass en el icon y en el caso del ngIf en el caso de los span que nos mostraran el texto dependiendo si esta o no esta "cargando"
+y por ultimo se ocupa el mismo boolean para activar el disable del botón.-->
+<button
+  [disabled]="loading"
+  (click)="ejecutar()"
+  mat-raised-button
+  type="button"
+  name="button"
+>
+  <i
+    [ngClass]="{
+      'fa-floppy-disk': !loading,
+      'fa-arrows-rotate fa-spin': loading
+    }"
+    class="fa-solid mr-1"
+  ></i>
+  <span *ngIf="!loading">Guardar cambios</span>
+  <span *ngIf="loading">Espere porfavor...</span>
+</button>

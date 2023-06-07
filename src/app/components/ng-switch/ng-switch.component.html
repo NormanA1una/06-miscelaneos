@@ -1,0 +1,79 @@
+<div [ngSwitch]="alerta" class="mt-4">
+  <div *ngSwitchCase="'done'">Done</div>
+  <div *ngSwitchCase="'info'">Info</div>
+  <div *ngSwitchCase="'warning'">warning</div>
+  <div *ngSwitchDefault>Danger</div>
+</div>
+
+<div [ngSwitch]="alerta">
+  <div *ngSwitchCase="'done'" class="mt-4" role="alert">
+    <mat-card>
+      <mat-card-content class="alert-done">Simple card DONE</mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngSwitchCase="'info'" class="mt-4" role="alert">
+    <mat-card>
+      <mat-card-content class="alert-info">Simple card INFO</mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngSwitchCase="'warning'" class="mt-4" role="alert">
+    <mat-card>
+      <mat-card-content class="alert-warning"
+        >Simple card WARNING</mat-card-content
+      >
+    </mat-card>
+  </div>
+
+  <div *ngSwitchDefault class="mt-4" role="alert">
+    <mat-card>
+      <mat-card-content class="alert-danger"
+        >Simple card DANGER</mat-card-content
+      >
+    </mat-card>
+  </div>
+</div>
+
+<div class="mt-4 space-x-4 flex justify-center">
+  <button
+    (click)="alerta = 'done'"
+    type="button"
+    name="button"
+    mat-raised-button
+    alert-done
+    class="alert-done"
+  >
+    Cambiar
+  </button>
+  <button
+    (click)="alerta = 'info'"
+    type="button"
+    name="button"
+    mat-raised-button
+    alert-info
+    class="alert-info"
+  >
+    Cambiar
+  </button>
+  <button
+    (click)="alerta = 'warning'"
+    type="button"
+    name="button"
+    mat-raised-button
+    alert-warning
+    class="alert-warning"
+  >
+    Cambiar
+  </button>
+  <button
+    (click)="alerta = 'danger'"
+    type="button"
+    name="button"
+    mat-raised-button
+    alert-danger
+    class="alert-danger"
+  >
+    Cambiar
+  </button>
+</div>

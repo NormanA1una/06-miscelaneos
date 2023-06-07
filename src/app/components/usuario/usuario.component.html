@@ -1,0 +1,15 @@
+<div class="mt-4 text-center">
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle [routerLink]="['nuevo']" value="bold"
+      >Nuevo</mat-button-toggle
+    >
+    <mat-button-toggle [routerLink]="['editar']" value="italic"
+      >Editar</mat-button-toggle
+    >
+    <mat-button-toggle [routerLink]="['detalle']" value="underline"
+      >Detalle</mat-button-toggle
+    >
+  </mat-button-toggle-group>
+</div>
+
+<router-outlet></router-outlet>
